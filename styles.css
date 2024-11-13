@@ -54,6 +54,10 @@ textarea {
   border-radius: 4px;
 }
 
+select {
+  background-color: white;
+}
+
 .row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
