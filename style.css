@@ -1,0 +1,149 @@
+/* General Styles */
+/* General Styles de renovacion */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+body {
+  background-image: url(imagenes/OSC\ difusa.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 110px;
+  position: absolute;
+  top: -10px;
+  left: -5px;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: #7d000e;
+}
+
+.fecha {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.fecha label {
+  font-size: 0.9rem;
+  margin-right: 5px;
+}
+
+.fecha input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Box Styles */
+.box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #7d000e;
+}
+
+/* Form Elements */
+label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+select {
+  background-color: white;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Rows for Multiple Inputs */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.row > div {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Button Styles */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #7d000e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3;
+}
+
+button:hover {
+  background-color: #7d000fef;
+}

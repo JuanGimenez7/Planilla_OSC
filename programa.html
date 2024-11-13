@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro - OSC</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sección 1: Datos Personales del Estudiante -->
+    <div class="section">
+      <h2>Programa de Formación Musical "Maestro José Calabrese"</h2>
+      <h3>Fundación Orquesta Sinfónica de Carabobo</h3>
+      <h4>Datos Personales del Estudiante</h4>
+      <form id="registroForm">
+        <label>Nombre(s) y Apellido(s):</label>
+        <input type="text" name="nombreEstudiante" required>
+        <div class="row">
+          <label>Fecha de Nacimiento:</label>
+          <input type="date" name="fechaNacimientoEstudiante" required>
+          <label>Edad:</label>
+          <input type="number" name="edadEstudiante" required>
+          <label>Sexo:</label>
+          <select name="sexoEstudiante">
+            <option value="F">F</option>
+            <option value="M">M</option>
+          </select>
+          <label>C.I.:</label>
+          <input type="text" name="ciEstudiante" required>
+        </div>
+        <label>Teléfono Celular:</label>
+        <input type="tel" name="telefonoEstudiante" required>
+        <label>Ocupación:</label>
+        <input type="text" name="ocupacionEstudiante">
+        <label>Email:</label>
+        <input type="email" name="emailEstudiante">
+        <label>Dirección:</label>
+        <textarea name="direccionEstudiante" rows="2"></textarea>
+      </form>
+    </div>
+
+    <!-- Sección 2: Datos del Representante Legal -->
+    <div class="section">
+      <h4>Datos del Representante Legal</h4>
+      <label>Nombre(s) y Apellido(s):</label>
+      <input type="text" name="nombreRepresentante">
+      <div class="row">
+        <label>C.I.:</label>
+        <input type="text" name="ciRepresentante">
+        <label>Parentesco:</label>
+        <input type="text" name="parentescoRepresentante">
+      </div>
+      <label>Teléfono Celular:</label>
+      <input type="tel" name="telefonoRepresentante">
+      <label>Ocupación:</label>
+      <input type="text" name="ocupacionRepresentante">
+      <label>Dirección:</label>
+      <textarea name="direccionRepresentante" rows="2"></textarea>
+      <div class="row">
+        <label>En caso de emergencia avisar a:</label>
+        <input type="text" name="nombreEmergencia">
+        <label>Teléfono:</label>
+        <input type="tel" name="telefonoEmergencia">
+      </div>
+    </div>
+
+    <!-- Sección 3: Materias e Instrumentos -->
+    <div class="section">
+      <h4>Materias a Inscribir</h4>
+      <div class="row">
+        <label>Instrumento(s):</label>
+        <input type="text" name="instrumento">
+        <label>Docente:</label>
+        <input type="text" name="docenteInstrumento">
+      </div>
+      <div class="row">
+        <label>Materias Teóricas:</label>
+        <input type="text" name="materiasTeoricas">
+        <label>Docente:</label>
+        <input type="text" name="docenteTeoricas">
+      </div>
+      <label>Otros:</label>
+      <input type="text" name="otros">
+      <div class="row">
+        <label>Posee Instrumento Propio:</label>
+        <select name="instrumentoPropio">
+          <option value="Si">Sí</option>
+          <option value="No">No</option>
+        </select>
+        <label>¿Cuál?:</label>
+        <input type="text" name="detalleInstrumento">
+      </div>
+    </div>
+
+    <!-- Sección 4: Inscripción y Autorización -->
+    <div class="section">
+      <h4>Autorización y Datos de Inscripción</h4>
+      <label>Autorizo a la Fundación OSC a hacer uso del material fotográfico y audiovisual de las actividades académicas y artísticas realizadas.</label>
+      <div class="row">
+        <label>Fecha de Ingreso:</label>
+        <input type="date" name="fechaIngreso">
+        <label>Inscripción:</label>
+        <input type="text" name="inscripcion">
+      </div>
+      <div class="row">
+        <label>Mensualidad:</label>
+        <input type="text" name="mensualidad">
+        <label>Matrícula:</label>
+        <input type="text" name="matricula">
+      </div>
+      <label>Firma del Estudiante o Representante Legal:</label>
+      <input type="text" name="firmaEstudiante">
+      <label>C.I. del Firmante:</label>
+      <input type="text" name="ciFirmante">
+      <button type="button" onclick="generarPDF()">Generar PDF</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</body>
+</html>
