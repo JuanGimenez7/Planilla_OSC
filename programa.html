@@ -1,157 +1,258 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Registro - OSC</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- Sección 1: Datos Personales del Estudiante -->
-      <div class="section">
-        <h2>Programa de Formación Musical "Maestro José Calabrese"</h2>
-        <h3>Fundación Orquesta Sinfónica de Carabobo</h3>
-        <h4>Datos Personales del Estudiante</h4>
-        <form id="registroForm">
-          <label>Nombre(s) y Apellido(s):</label>
-          <input type="text" name="nombreEstudiante" required />
-          <div class="row">
-            <label>Fecha de Nacimiento:</label>
-            <input type="date" name="fechaNacimientoEstudiante" required />
-            <label>Edad:</label>
-            <input type="number" name="edadEstudiante" required />
-            <label>Sexo:</label>
-            <select name="sexoEstudiante">
-              <option>(Seleccionar)</option>
-              <option value="F">F</option>
-              <option value="M">M</option>
-            </select>
-            <label>C.I.:</label>
-            <input type="text" name="ciEstudiante" required />
-          </div>
-          <label>Teléfono Celular:</label>
-          <input type="tel" name="telefonoEstudiante" required />
-          <label>Ocupación:</label>
-          <input type="text" name="ocupacionEstudiante" />
-          <label>Email:</label>
-          <input type="email" name="emailEstudiante" />
-          <label>Dirección:</label>
-          <textarea name="direccionEstudiante" rows="2"></textarea>
-        </form>
-      </div>
+ <!DOCTYPE html>
+         <html lang="es">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Formulario de Registro - OSC</title>
+              <link rel="stylesheet" href="style.css" />
+            </head>
+            <body>
+              <div class="container">
+                <!-- Sección 1: Datos Personales del Estudiante -->
+                <div class="section">
+                  <h2>Programa de Formación Musical "Maestro José Calabrese"</h2>
+                  <h3>Fundación Orquesta Sinfónica de Carabobo</h3>
+                  <h4>Datos Personales del Estudiante</h4>
+                  <form id="registroForm">
+                    <label>Nombre(s) y Apellido(s):</label>
+                    <input type="text" name="nombreEstudiante" required />
+                    <div class="row">
+                      <label>Fecha de Nacimiento:</label>
+                      <input type="date" name="fechaNacimientoEstudiante" required />
+                      <label>Edad:</label>
+                      <input type="number" name="edadEstudiante" required />
+                      <label>Sexo:</label>
+                      <select name="sexoEstudiante">
+                        <option>(Seleccionar)</option>
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                      </select>
+                      <label>C.I.:</label>
+                      <input type="text" name="ciEstudiante" required />
+                    </div>
+                    <label>Teléfono Celular:</label>
+                    <input type="tel" name="telefonoEstudiante" required />
+                    <label>Ocupación:</label>
+                    <input type="text" name="ocupacionEstudiante" />
+                    <label>Email:</label>
+                    <input type="email" name="emailEstudiante" />
+                    <label>Dirección:</label>
+                    <textarea name="direccionEstudiante" rows="2"></textarea>
+                  
+                </div>
+          
+                <!-- Sección 2: Datos del Representante Legal -->
+                <div class="section">
+                  <h4>Datos del Representante Legal</h4>
+                  <label>Nombre(s) y Apellido(s):</label>
+                  <input type="text" name="nombreRepresentante" />
+                  <div class="row">
+                    <label>C.I.:</label>
+                    <input type="text" name="ciRepresentante" />
+                    <label>Parentesco:</label>
+                    <input type="text" name="parentescoRepresentante" />
+                  </div>
+                  <label>Teléfono Celular:</label>
+                  <input type="tel" name="telefonoRepresentante" />
+                  <label>Ocupación:</label>
+                  <input type="text" name="ocupacionRepresentante" />
+                  <label>Dirección:</label>
+                  <textarea name="direccionRepresentante" rows="2"></textarea>
+                  <div class="row">
+                    <label>En caso de emergencia avisar a:</label>
+                    <input type="text" name="nombreEmergencia" />
+                    <label>Teléfono:</label>
+                    <input type="tel" name="telefonoEmergencia" />
+                  </div>
+                </div>
+          
+                <!-- Sección 3: Materias e Instrumentos -->
+                <div class="section">
+                  <h4>Materias a Inscribir</h4>
+                  <div class="row">
+                    <label>Instrumento(s):</label>
+                    <input type="text" name="instrumento" />
+                    <label>Docente:</label>
+                    <input type="text" name="docenteInstrumento" />
+                  </div>
+                  <div class="row">
+                    <label>Materias Teóricas:</label>
+                    <input type="text" name="materiasTeoricas" />
+                    <label>Docente:</label>
+                    <input type="text" name="docenteTeoricas" />
+                  </div>
+                  <label>Otros:</label>
+                  <input type="text" name="otros" />
+                  <div class="row">
+                    <label>Posee Instrumento Propio:</label>
+                    <select name="instrumentoPropio">
+                      <option>(Seleccionar)</option>
+                      <option value="Si">Sí</option>
+                      <option value="No">No</option>
+                    </select>
+                    <label>¿Cuál?:</label>
+                    <input type="text" name="detalleInstrumento" />
+                  </div>
+                </div>
+          
+                <!-- Sección 4: Inscripción y Autorización -->
+                <div class="section">
+                  <h4>Autorización y Datos de Inscripción</h4>
+                  <label
+                    >Autorizo a la Fundación OSC a hacer uso del material fotográfico y
+                    audiovisual de las actividades académicas y artísticas
+                    realizadas.</label
+                  >
+                  <div class="row">
+                    <label>Fecha de Ingreso:</label>
+                    <input type="date" name="fechaIngreso" />
+                    </div>
+                  
+                  <button type="button" onclick="generarPDF()" id="botonGenerarPDF">Generar PDF</button>
+                </div>
 
-      <!-- Sección 2: Datos del Representante Legal -->
-      <div class="section">
-        <h4>Datos del Representante Legal</h4>
-        <label>Nombre(s) y Apellido(s):</label>
-        <input type="text" name="nombreRepresentante" />
-        <div class="row">
-          <label>C.I.:</label>
-          <input type="text" name="ciRepresentante" />
-          <label>Parentesco:</label>
-          <input type="text" name="parentescoRepresentante" />
-        </div>
-        <label>Teléfono Celular:</label>
-        <input type="tel" name="telefonoRepresentante" />
-        <label>Ocupación:</label>
-        <input type="text" name="ocupacionRepresentante" />
-        <label>Dirección:</label>
-        <textarea name="direccionRepresentante" rows="2"></textarea>
-        <div class="row">
-          <label>En caso de emergencia avisar a:</label>
-          <input type="text" name="nombreEmergencia" />
-          <label>Teléfono:</label>
-          <input type="tel" name="telefonoEmergencia" />
-        </div>
-      </div>
+              </div>
+              </form>
+   
+            </body>
 
-      <!-- Sección 3: Materias e Instrumentos -->
-      <div class="section">
-        <h4>Materias a Inscribir</h4>
-        <div class="row">
-          <label>Instrumento(s):</label>
-          <input type="text" name="instrumento" />
-          <label>Docente:</label>
-          <input type="text" name="docenteInstrumento" />
-        </div>
-        <div class="row">
-          <label>Materias Teóricas:</label>
-          <input type="text" name="materiasTeoricas" />
-          <label>Docente:</label>
-          <input type="text" name="docenteTeoricas" />
-        </div>
-        <label>Otros:</label>
-        <input type="text" name="otros" />
-        <div class="row">
-          <label>Posee Instrumento Propio:</label>
-          <select name="instrumentoPropio">
-            <option>(Seleccionar)</option>
-            <option value="Si">Sí</option>
-            <option value="No">No</option>
-          </select>
-          <label>¿Cuál?:</label>
-          <input type="text" name="detalleInstrumento" />
-        </div>
-      </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+            <script>
+              async function generarPDF() {
+                // Importamos jsPDF desde el paquete
+                const { jsPDF } = window.jspdf;
+            
+                // Crear una nueva instancia de jsPDF
+                const doc = new jsPDF();
+            
+                // Variables para manejar el formato del PDF
+                let y = 10; // Posición inicial en el eje Y
+                const lineSpacing = 10; // Espaciado entre líneas
+                const sectionSpacing = 20; // Espaciado entre secciones
+            
+                // Agregar título principal
+                doc.setFontSize(16);
+                doc.setFont("helvetica", "bold");
+                doc.text(
+                  'Programa de Formación Musical "Maestro José Calabrese"',
+                  105,
+                  y,
+                  { align: 'center' }
+                );
+                y += lineSpacing;
+                doc.setFontSize(14);
+                doc.text(
+                  'Fundación Orquesta Sinfónica de Carabobo',
+                  105,
+                  y,
+                  { align: 'center' }
+                );
+                y += sectionSpacing;
+            
+                // Sección: Datos Personales del Estudiante
+                doc.setFontSize(12);
+                doc.text('Datos Personales del Estudiante:', 10, y);
+                y += lineSpacing;
+                doc.setFontSize(10);
+            
+                const form = document.querySelector('#registroForm');
+                doc.text(`Nombre(s) y Apellido(s): ${form.nombreEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Fecha de Nacimiento: ${form.fechaNacimientoEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Edad: ${form.edadEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Sexo: ${form.sexoEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`C.I.: ${form.ciEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Teléfono Celular: ${form.telefonoEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Ocupación: ${form.ocupacionEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Email: ${form.emailEstudiante.value}`, 10, y);
+                y += lineSpacing;
+                doc.text(`Dirección: ${form.direccionEstudiante.value}`, 10, y);
+                y += sectionSpacing;
+            
+                // Repite el proceso para las demás secciones
+                doc.text('Datos del Representante Legal:', 10, y);
+                y += lineSpacing;
+                doc.text(
+                  `Nombre(s) y Apellido(s): ${document.querySelector('[name="nombreRepresentante"]').value}`,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `C.I.: ${document.querySelector('[name="ciRepresentante"]').value}`,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `Parentesco: ${document.querySelector('[name="parentescoRepresentante"]').value}`,
+                  10,
+                  y
+                );
+                y += sectionSpacing;
+            
+                // Sección: Materias e Instrumentos
+                doc.text('Materias a Inscribir:', 10, y);
+                y += lineSpacing;
+                doc.text(
+                  `Instrumento(s): ${document.querySelector('[name="instrumento"]').value}`,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `Docente: ${document.querySelector('[name="docenteInstrumento"]').value}`,
+                  10,
+                  y
+                );
+                y += sectionSpacing;
+            
+                // Sección: Autorización y Datos de Inscripción
+                doc.text('Autorización y Datos de Inscripción:', 10, y);
+                y += lineSpacing;
+                doc.text(
+                  `Fecha de Ingreso: ${document.querySelector('[name="fechaIngreso"]').value}`,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `Inscripción: `,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `Mensualidad: `,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `Firma del estudiante o representante legal: `,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+                doc.text(
+                  `Firma `,
+                  10,
+                  y
+                );
+                y += lineSpacing;
+            
+                // Guardar el PDF
+                doc.save('Ficha_Registro_Estudiante.pdf');
+              }
+            </script>
+            
 
-      <!-- Sección 4: Inscripción y Autorización -->
-      <div class="section">
-        <h4>Autorización y Datos de Inscripción</h4>
-        <label
-          >Autorizo a la Fundación OSC a hacer uso del material fotográfico y
-          audiovisual de las actividades académicas y artísticas
-          realizadas.</label
-        >
-        <div class="row">
-          <label>Fecha de Ingreso:</label>
-          <input type="date" name="fechaIngreso" />
-          <label>Inscripción:</label>
-          <input type="text" name="inscripcion" />
-        </div>
-        <div class="row">
-          <label>Mensualidad:</label>
-          <input type="text" name="mensualidad" />
-          <label>Matrícula:</label>
-          <input type="text" name="matricula" />
-        </div>
-        <label>Firma del Estudiante o Representante Legal:</label>
-        <input type="text" name="firmaEstudiante" />
-        <label>C.I. del Firmante:</label>
-        <input type="text" name="ciFirmante" />
-        <button type="button" onclick="generarPDF()" id="botonGenerarPDF">Generar PDF</button>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    <script>
-      function generarPDF() {
-        const element = document.querySelector(".container");
-        const button = document.querySelector("#botonGenerarPDF"); // Asegúrate de seleccionar correctamente el botón
-
-        // Oculta el botón temporalmente
-        button.style.display = "none";
-
-        const options = {
-          margin: 1,
-          filename: "Ficho_Registro_Estudiante.pdf",
-          html2canvas: { scale: 1 },
-          jsPDF: {
-            unit: "px",
-            format: [element.offsetWidth, element.offsetHeight],
-            orientation: "portrait",
-          },
-        };
-
-        // Genera el PDF y luego muestra el botón nuevamente
-        html2pdf()
-          .set(options)
-          .from(element)
-          .save()
-          .finally(() => {
-            // Vuelve a mostrar el botón
-            button.style.display = "block";
-          });
-      }
-    </script>
-  </body>
+ 
 </html>
+      
