@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha de Registro - Orquesta Sinfónica de Carabobo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="ficha">
+    <div class="container">
+      <header class="header">
+        <img id="img1" src="imagenes/orquesta.png" alt="OSC" class="logo" />
+        <img id="img2" src="imagenes/fundacion.png" alt="OSC" class="logo" />
+        <h2>Ficha de Registro</h2>
+        <h3>Integrantes de la Orquesta Sinfónica de Carabobo</h3>
+        <div class="row tiempo">
+          <div>
+            <label id="periodo">Periodo académico:</label>
+            <input
+              class="readonly"
+              type="text"
+              readonly
+              placeholder="Se llena por el personal"
+            />
+          </div>
+          <div class="fecha">
+            <label id="fecha" for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" />
+          </div>
+        </div>
+        <div class="image-container">
+          <!-- Imagen personalizada -->
+          <img id="customPreview" class="custom-img" 
+              src="imagenes/foto_previa.png" 
+              alt="Selecciona una imagen">
+          <!-- Input de archivo oculto -->
+          <input type="file" id="fileInput" accept="image/*">
+      </div>
+      </header>
+      <form id="registroForm">
+        <!-- Cuadro 1 -->
+          <div class="box">
+            <h3>Información del Integrante</h3>
+
+            <div class="row">
+              <div>
+                <label>Apellidos y nombres:</label>
+                <input type="text" name="nombre" required />
+              </div>
+              <div>
+                <label for="ci">Cédula:</label>
+                <input type="text" id="ci" name="ci" required />
+              </div>
+              <div>
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input
+                  type="date"
+                  id="fechaNacimiento"
+                  name="fechaNacimiento"
+                  required
+                />
+              </div>
+              
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="edad">Edad:</label>
+                <input
+                  type="number"
+                  id="edad"
+                  name="edad"
+                  min="1"
+                  max="100"
+                  required
+                />
+              </div>
+              <div>
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                  <option>(Seleccionar)</option>
+                  <option value="F">F</option>
+                  <option value="M">M</option>
+                </select>
+              </div>
+              <div>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" />
+              </div>
+              <div>
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" />
+              </div>
+
+              
+            </div>
+            <div class="row">
+              <div>
+                <label>Nacionalidad:</label>
+                <input type="text" name="nacionalidad" />
+              </div>
+              <div>
+                <label>Estado civil:</label>
+                <select name="estadoCivil">
+                  <option>(Seleccionar)</option>
+                  <option>Soltero</option>
+                  <option>Casado</option>
+                  <option>Viudo</option>
+                  <option>Divorciado</option>
+                </select>
+              </div>
+              <div>
+                <label>N.º de Hijos:</label>
+                <input type="number" name="numHijos" />
+              </div>
+              <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div>
+                <label>Lugar de Nacimiento:</label>
+                <input type="text" name="lugarNacimiento" />
+              </div>
+
+            </div>
+          </div>
+
+        <!-- Cuadro 2 -->
+        <div class="box">
+          <h3>Datos del Representante Legal (solo menores de edad)</h3>
+          <div class="row">
+            <div>
+              <label>Apellidos y Nombres:</label>
+              <input type="text" name="nombreRepresentante" />
+            </div>
+            <div>
+              <label>Cédula:</label>
+              <input type="text" name="cedulaRepresentante" />
+            </div>
+
+          </div>
+          <div class="row">
+            <div>
+              <label>Parentesco:</label>
+              <input type="text" name="parentesco" />
+            </div>
+            <div>
+              <label>Nacionalidad:</label>
+              <input type="text" name="nacionalidadRepresentante" />
+            </div>
+            <div>
+              <label>Sexo:</label>
+              <select name="sexoRepresentante">
+                <option>(Seleccionar)</option>
+                <option value="F">F</option>
+                <option value="M">M</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label>Teléfono:</label>
+              <input type="tel" name="telefonoRepresentante" />
+            </div>
+            <div>
+              <label>Email:</label>
+              <input type="email" name="emailRepresentante" />
+            </div>
+            <div>
+              <label>Dirección:</label>
+              <input type="text" name="direccionRepresentante" />
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Status OSC (solo para ser llenado por el personal)</h3>
+          <div class="row">
+            <div>
+              <label>Fecha de Ingreso:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                name="fechaIngreso"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>Nivel Actual:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                name="nivelActual"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>Instrumento:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                name="instrumento"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>Código:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                name="codigo"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Cuadro 3 -->
+        <div class="box">
+          <h3>Datos Académicos y/o Profesionales</h3>
+          <div class="row">
+            <div>
+              <label>Preparación Académica:</label>
+              <select name="preparacionAcademica">
+                <option>(Seleccionar)</option>
+                <option value="Primaria">Primaria</option>
+                <option value="Secundaria">Secundaria</option>
+                <option value="TSU">T.S.U.</option>
+                <option value="Universitaria">Universitaria</option>
+              </select>
+            </div>
+            <div>
+              <label>Situación Laboral:</label>
+              <select name="situacionLaboral">
+                <option>(Seleccionar)</option>
+                <option value="Fijo">Fijo</option>
+                <option value="Temporal">Temporal</option>
+                <option value="Medio Tiempo">Medio Tiempo</option>
+                <option value="No Labora">No Labora</option>
+              </select>
+            </div>
+            <div>
+              <label>Lugar de Trabajo:</label>
+              <input type="text" name="lugar" />
+            </div>
+          </div>
+          <div class="row">
+            
+            <div>
+              <label>Fecha de Ingreso:</label>
+              <input type="date" name="fechaIngreso" />
+            </div>
+            <div>
+              <label>Dirección:</label>
+              <input type="text" name="direccion" />
+            </div>
+            <div>
+              <label>Inmueble:</label>
+              <input type="text" name="inmueble" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label>Ciudad:</label>
+              <input type="text" name="ciudad" />
+            </div>
+            <div>
+              <label>Estado:</label>
+              <input type="text" name="estado" />
+            </div>
+            <div>
+              <label>Municipio:</label>
+              <input type="text" name="municipio" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Cuadro 4 -->
+        <div class="box">
+          <h3>Referencias Personales</h3>
+          <div class="row">
+            <span>
+              <label>N°</label>
+
+              <span id="one">1.</span>
+              <span id="two">2.</span>
+            </span>
+            <div>
+              <label>Nombre y Apellido:</label>
+              <input type="text" name="referenciaNombre1" />
+              <input type="text" name="referenciaNombre1" />
+            </div>
+            <div>
+              <label>Cédula:</label>
+              <input type="text" name="referenciaCedula1" />
+              <input type="text" name="referenciaCedula1" />
+            </div>
+
+            <div>
+              <label>Teléfono:</label>
+              <input type="text" name="referenciaTelefono1" />
+              <input type="text" name="referenciaTelefono1" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+      <button type="button" onclick="generarPDF()" id="botonGenerarPDF">
+        Generar PDF
+      </button>
+    </div>
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const customPreview = document.getElementById('customPreview');
+
+      // Evento para abrir el selector de archivos al hacer clic en la imagen
+      customPreview.addEventListener('click', () => {
+          fileInput.click(); // Dispara el clic del input oculto
+      });
+
+      // Evento para mostrar la imagen seleccionada
+      fileInput.addEventListener('change', (event) => {
+          const file = event.target.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                  customPreview.src = e.target.result; // Muestra la imagen seleccionada
+              };
+              reader.readAsDataURL(file); // Convierte el archivo a URL base64
+          }
+      });
+  </script>
+  </body>
+</html>
