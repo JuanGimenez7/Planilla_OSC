@@ -308,31 +308,42 @@
           </div>
         </div>
       </form>
-    </div>
       <button type="button" onclick="generarPDF()" id="botonGenerarPDF">
         Generar PDF
       </button>
     </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
-      const fileInput = document.getElementById('fileInput');
-      const customPreview = document.getElementById('customPreview');
+      function generarPDF() {
+        const element = document.querySelector(".container");
+        const button = document.querySelector("#botonGenerarPDF"); // Asegúrate de seleccionar correctamente el botón
 
-      // Evento para abrir el selector de archivos al hacer clic en la imagen
-      customPreview.addEventListener('click', () => {
-          fileInput.click(); // Dispara el clic del input oculto
-      });
+        // Oculta el botón temporalmente
+        button.style.display = "none";
 
-      // Evento para mostrar la imagen seleccionada
-      fileInput.addEventListener('change', (event) => {
-          const file = event.target.files[0];
-          if (file) {
-              const reader = new FileReader();
-              reader.onload = (e) => {
-                  customPreview.src = e.target.result; // Muestra la imagen seleccionada
-              };
-              reader.readAsDataURL(file); // Convierte el archivo a URL base64
-          }
-      });
-  </script>
+        const options = {
+          margin: 1,
+          filename: "Ficho_Registro_Estudiante.pdf",
+          html2canvas: { scale: 1 },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
+        };
+
+        // Genera el PDF y luego muestra el botón nuevamente
+        html2pdf()
+          .set(options)
+          .from(element)
+          .save()
+          .finally(() => {
+            // Vuelve a mostrar el botón
+            button.style.display = "block";
+          });
+      }
+    </script>
   </body>
 </html>

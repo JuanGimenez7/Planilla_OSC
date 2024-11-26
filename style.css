@@ -32,6 +32,17 @@ body {
   min-width: 1200px;
   height: 1552px;
 }
+.container2 {
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 1200px;
+  box-shadow: 22px 22px 40px rgb(0, 0, 0, 0.7), -22px -22px 40px rgb(0, 0, 0, 0.7);
+  padding: 25px;
+  min-width: 1200px;
+  height: 1252px;
+}
+
 
 /* Header Styles */
 header {
@@ -121,8 +132,8 @@ select {
 /* Button Styles */
 button {
   display: block;
-  width: 1200px;
-  min-width: 1200px;
+  width: 500px;
+  min-width: 500px;
   margin: 0 auto;
   padding: 10px;
   font-size: 1rem;
@@ -213,3 +224,28 @@ button:hover {
   border: 2px solid #777; /* Añade un borde para destacar */
   border-radius: 10px;
 }
+#img1a{
+  position: absolute;
+  top: 0;
+  left: 1em; /* Posiciona la imagen a la izquierda */
+  width: 9em; /* Ajusta el tamaño */
+}
+.radio-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-buttons label {
+  margin-right: 15px;  /* Espacio entre los botones de radio */
+}
+
+.radio-buttons input[type="text"] {
+  margin-left: 10px; /* Espacio entre los botones de radio y el input */
+  padding: 5px;
+  width: 180px; /* Ancho del campo de texto */
+}
+.pdf{
+  width: 1rem;
+}
+

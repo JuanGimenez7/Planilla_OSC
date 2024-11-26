@@ -7,17 +7,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="renovacion">
-    <div class="container">
+    <div class="container2">
       <!-- Cabecera -->
       
-        <header>
-          <img src="imagenes/calabrese.png" alt="OSC" class="logo" />
-          <h2>Renovación de Inscripción</h2>
+      <header class="header">
+        <img id="img1a" src="imagenes/calabrese.png" alt="OSC" class="logo" />
+        <h2>Programa de Formación Musical "Maestro José Calabrese"</h2>
+        <h3>Fundación Orquesta Sinfónica de Carabobo</h3>
+        <h3>Renovación de Inscripción</h3>
+        <div class="row tiempo">
+          <div>
+            <label id="periodo">Periodo académico:</label>
+            <input class="readonly" type="text" readonly placeholder="Se llena por el personal" />
+          </div>
           <div class="fecha">
-            <label for="fecha">Fecha:</label>
+            <label id="fecha" for="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha" />
           </div>
-        </header>
+        </div>
+        <div class="image-container">
+          <!-- Imagen personalizada -->
+          <img id="customPreview" class="custom-img" src="imagenes/foto_previa.png" alt="Selecciona una imagen">
+          <!-- Input de archivo oculto -->
+          <input type="file" id="fileInput" accept="image/*">
+        </div>
+      </header>
 
       <form>
         <!-- Primer Cuadro: Datos Personales -->
@@ -137,105 +151,35 @@
         </button>
       </form>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script>
-      async function generarPDF() {
-        // Importa la librería jsPDF
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
+      function generarPDF() {
+        const element = document.querySelector(".container2");
+        const button = document.querySelector("#botonGenerarPDF"); // Asegúrate de seleccionar correctamente el botón
 
-        // Agregar el título principal centrado
-        const titulo = "Renovación de Inscripción";
-        doc.setFontSize(16);
-        doc.setFont("helvetica", "bold");
-        const pageWidth = doc.internal.pageSize.width; // Ancho de la página
-        const textWidth = doc.getTextWidth(titulo); // Ancho del texto
-        const xPos = (pageWidth - textWidth) / 2; // Calcula posición centrada
-        doc.text(titulo, xPos, 10);
+        // Oculta el botón temporalmente
+        button.style.display = "none";
 
-        // Línea debajo del título
-        doc.setLineWidth(0.5);
-        doc.line(10, 15, pageWidth - 10, 15); // Dibuja una línea horizontal
-
-        // Función para agregar una sección al PDF
-        const agregarSeccion = (titulo, contenido, yInicial) => {
-          let y = yInicial;
-          doc.setFontSize(14);
-          doc.text(titulo, 10, y);
-          y += 6;
-
-          doc.setFontSize(12);
-          contenido.forEach((linea) => {
-            doc.text(linea, 10, y);
-            y += 6;
-          });
-          return y;
+        const options = {
+          margin: 1,
+          filename: "Ficho_Registro_Estudiante.pdf",
+          html2canvas: { scale: 1 },
+          jsPDF: {
+            unit: "px",
+            format: [element.offsetWidth, element.offsetHeight],
+            orientation: "portrait",
+          },
         };
 
-        // Obtiene los valores del formulario
-        const nombre = document.getElementById("nombre").value;
-        const fechaNacimiento =
-          document.getElementById("fechaNacimiento").value;
-        const edad = document.getElementById("edad").value;
-        const sexo = document.getElementById("sexo").value;
-        const ci = document.getElementById("ci").value;
-        const telefono = document.getElementById("telefono").value;
-        const ocupacion = document.getElementById("ocupacion").value;
-
-        const beca = document.getElementById("beca").value;
-        const cualBeca = document.getElementById("cualBeca").value;
-        const instrumentos = document.getElementById("instrumentos").value;
-        const docenteInstrumentos = document.getElementById(
-          "docenteInstrumentos"
-        ).value;
-        const materiasTeoricas =
-          document.getElementById("materiasTeoricas").value;
-        const docenteTeoricas =
-          document.getElementById("docenteTeoricas").value;
-        const otros = document.getElementById("otros").value;
-        const instrumentoPropio =
-          document.getElementById("instrumentoPropio").value;
-        const cualInstrumento =
-          document.getElementById("cualInstrumento").value;
-
-        // Datos personales
-        let y = 20; // Comienza después del título
-        y = agregarSeccion(
-          "Datos Personales del Estudiante",
-          [
-            `Nombre(s) y Apellido(s): ${nombre}`,
-            `Fecha de Nacimiento: ${fechaNacimiento}`,
-            `Edad: ${edad}`,
-            `Sexo: ${sexo}`,
-            `Cédula: ${ci}`,
-            `Teléfono: ${telefono}`,
-            `Ocupación: ${ocupacion}`,
-          ],
-          y
-        );
-
-        // Materias y beca
-        y = agregarSeccion(
-          "Materias a Inscribir ",
-          [
-            `Beca: ${beca}`,
-            `¿Cuál Beca?: ${cualBeca}`,
-            `Instrumento(s): ${instrumentos}`,
-            `Docente(s) de instrumento(s): ${docenteInstrumentos}`,
-            `Materias Teóricas: ${materiasTeoricas}`,
-            `Docente(s) de materias teóricas: ${docenteTeoricas}`,
-            `Otros: ${otros}`,
-            `Posee Instrumento Propio: ${instrumentoPropio}`,
-            `¿Cuál Instrumento?: ${cualInstrumento}`,
-            "Incripcion:",
-            "Mensualidad",
-          ],
-          y + 10
-        );
-
-        // Guarda el PDF
-        doc.save("Renovacion_Inscripcion.pdf");
+        // Genera el PDF y luego muestra el botón nuevamente
+        html2pdf()
+          .set(options)
+          .from(element)
+          .save()
+          .finally(() => {
+            // Vuelve a mostrar el botón
+            button.style.display = "block";
+          });
       }
     </script>
   </body>
