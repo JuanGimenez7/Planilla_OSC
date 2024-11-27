@@ -166,14 +166,14 @@ button:hover {
   position: absolute;
   top: 0;
   left: 10em; /* Posiciona la imagen a la izquierda */
-  width: 9em; /* Ajusta el tamaño */
+  width: 10em; /* Ajusta el tamaño */
 }
 
 #img2 {
   position: absolute;
   top: 0;
   right: 10em; /* Posiciona la imagen a la izquierda */
-  width: 9em; /* Ajusta el tamaño */
+  width: 10em; /* Ajusta el tamaño */
 }
 
 #periodo {
@@ -228,7 +228,7 @@ button:hover {
   position: absolute;
   top: 0;
   left: 1em; /* Posiciona la imagen a la izquierda */
-  width: 9em; /* Ajusta el tamaño */
+  width: 7em; /* Ajusta el tamaño */
 }
 .radio-buttons {
   display: flex;

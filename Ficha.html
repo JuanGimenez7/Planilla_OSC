@@ -320,6 +320,16 @@
         const element = document.querySelector(".container");
         const button = document.querySelector("#botonGenerarPDF"); // Asegúrate de seleccionar correctamente el botón
 
+        const inputs = element.querySelectorAll("input");
+        function place(c) {
+          inputs.forEach((input) => {
+            if (input.className === "readonly") {
+              input.placeholder = `${c}`;
+            }
+          });
+        }
+        place("");
+
         // Oculta el botón temporalmente
         button.style.display = "none";
 
@@ -342,6 +352,7 @@
           .finally(() => {
             // Vuelve a mostrar el botón
             button.style.display = "block";
+            place("Se llena por el personal");
           });
       }
     </script>

@@ -9,7 +9,7 @@
   <body id="renovacion">
     <div class="container2">
       <!-- Cabecera -->
-      
+
       <header class="header">
         <img id="img1a" src="imagenes/calabrese.png" alt="OSC" class="logo" />
         <h2>Programa de Formación Musical "Maestro José Calabrese"</h2>
@@ -18,7 +18,14 @@
         <div class="row tiempo">
           <div>
             <label id="periodo">Periodo académico:</label>
-            <input class="readonly" type="text" readonly placeholder="Se llena por el personal" />
+            <input
+              id="personal"
+              value=""
+              class="readonly"
+              type="text"
+              readonly
+              placeholder="Se llena por el personal"
+            />
           </div>
           <div class="fecha">
             <label id="fecha" for="fecha">Fecha:</label>
@@ -27,9 +34,14 @@
         </div>
         <div class="image-container">
           <!-- Imagen personalizada -->
-          <img id="customPreview" class="custom-img" src="imagenes/foto_previa.png" alt="Selecciona una imagen">
+          <img
+            id="customPreview"
+            class="custom-img"
+            src="imagenes/foto_previa.png"
+            alt="Selecciona una imagen"
+          />
           <!-- Input de archivo oculto -->
-          <input type="file" id="fileInput" accept="image/*">
+          <input type="file" id="fileInput" accept="image/*" />
         </div>
       </header>
 
@@ -101,7 +113,12 @@
             </div>
             <div>
               <label for="cualBeca">¿Cuál?:</label>
-              <input type="text" id="cualBeca" name="cualBeca" placeholder="Describa la beca"/>
+              <input
+                type="text"
+                id="cualBeca"
+                name="cualBeca"
+                placeholder="Describa la beca"
+              />
             </div>
           </div>
 
@@ -155,14 +172,25 @@
     <script>
       function generarPDF() {
         const element = document.querySelector(".container2");
-        const button = document.querySelector("#botonGenerarPDF"); // Asegúrate de seleccionar correctamente el botón
+        const button = document.querySelector("#botonGenerarPDF");
+
+        // Asegúrate de que los valores actuales de los inputs y textareas estén reflejados en el PDF
+        const inputs = element.querySelectorAll("input");
+        function place(c) {
+          inputs.forEach((input) => {
+            if (input.className === "readonly") {
+              input.placeholder = `${c}`;
+            }
+          });
+        }
+        place("");
 
         // Oculta el botón temporalmente
         button.style.display = "none";
 
         const options = {
           margin: 1,
-          filename: "Ficho_Registro_Estudiante.pdf",
+          filename: "Ficha_Registro_Estudiante.pdf",
           html2canvas: { scale: 1 },
           jsPDF: {
             unit: "px",
@@ -179,6 +207,7 @@
           .finally(() => {
             // Vuelve a mostrar el botón
             button.style.display = "block";
+            place("Se llena por el personal");
           });
       }
     </script>
