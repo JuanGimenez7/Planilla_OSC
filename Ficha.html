@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ficha de Registro - Orquesta Sinfónica de Carabobo</title>
+    <title>Ficha de Registro - Integrantes de la Orquesta Sinfónica de Carabobo</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="ico" href="imagenes/logo.png" />
+
   </head>
   <body id="ficha">
     <div class="container">
@@ -315,6 +317,7 @@
       
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="foto.js"></script>
     <script>
       function generarPDF() {
         const element = document.querySelector(".container");
@@ -334,9 +337,9 @@
         button.style.display = "none";
 
         const options = {
-          margin: 1,
-          filename: "Ficho_Registro_Estudiante.pdf",
-          html2canvas: { scale: 1 },
+          margin: 0,
+          filename: "Ficha de Registro - Integrantes de la Orquesta Sinfónica de Carabobo.pdf",
+          html2canvas: { scale: 3 },
           jsPDF: {
             unit: "px",
             format: [element.offsetWidth, element.offsetHeight],

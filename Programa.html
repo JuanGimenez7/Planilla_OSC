@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Registro - OSC</title>
+    <title>Programa de Formación Musical "Maestro José Calabrese" (Inscripción)</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="ico" href="imagenes/calabrese_logo.ico" />
   </head>
   <body>
     <div class="container2">
@@ -43,7 +44,7 @@
       <form id="registroForm">
         <!-- Cuadro 1: Información del Integrante -->
         <div class="box">
-          <h3>Información del Integrante</h3>
+          <h3>Datos Personales del Estudiante</h3>
 
           <div class="row">
             <div>
@@ -89,17 +90,18 @@
               <label for="telefono">Teléfono:</label>
               <input type="tel" id="telefono" name="telefono" />
             </div>
-            <div>
-              <label for="direccion">Dirección:</label>
-              <input type="text" id="direccion" name="direccion" />
-            </div>
           </div>
 
           <div class="row">
             <div>
-              <label>Nacionalidad:</label>
-              <input type="text" name="nacionalidad" />
+              <label>Ocupación:</label>
+              <input type="text" name="ocupacion" />
             </div>
+            <div>
+              <label for="direccion">Dirección:</label>
+              <input type="text" id="direccion" name="direccion" />
+            </div>
+
             <div>
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" />
@@ -119,6 +121,10 @@
               <label>Cédula:</label>
               <input type="text" name="cedulaRepresentante" />
             </div>
+            <div>
+              <label>Dirección:</label>
+              <input type="text" name="direccionRepresentante" />
+            </div>
           </div>
           <div class="row">
             <div>
@@ -133,6 +139,7 @@
               <label>Ocupación:</label>
               <input type="text" name="Ocupacion" />
             </div>
+
           </div>
           <div class="row">
             <div>
@@ -143,19 +150,24 @@
               <label>Email:</label>
               <input type="email" name="emailRepresentante" />
             </div>
+
             <div>
-              <label>Dirección:</label>
-              <input type="text" name="direccionRepresentante" />
+              <label>En caso de emergencia avisar a:</label>
+              <input type="text" name="avisar" />
+            </div>
+            <div>
+              <label>Teléfono de emergencia:</label>
+              <input type="tel" name="telefonoAvisar" />
             </div>
           </div>
         </div>
 
         <!-- Cuadro 3: Materias a inscribir (solo para ser llenado por el personal) -->
         <div class="box">
-          <h3>Materias a inscribir (solo para ser llenado por el personal)</h3>
+          <h3>Materias a inscribir</h3>
           <div class="row">
             <div>
-              <label>Instrumentos:</label>
+              <label>Instrumento(s):</label>
               <input
                 class="readonly"
                 readonly
@@ -165,7 +177,7 @@
               />
             </div>
             <div>
-              <label>Docente(s):</label>
+              <label>Docente:</label>
               <input
                 class="readonly"
                 readonly
@@ -185,7 +197,7 @@
               />
             </div>
             <div>
-              <label>Docente(s):</label>
+              <label>Docente:</label>
               <input
                 class="readonly"
                 readonly
@@ -195,21 +207,82 @@
               />
             </div>
           </div>
-
-          <div>
+          <div class="radio-buttons">
             <label>¿Posee instrumento propio?</label>
-            <div class="radio-buttons">
-              <label>
-                <input type="radio" name="instrumentoPropio" value="Si" /> Sí
-              </label>
-              <label>
-                <input type="radio" name="instrumentoPropio" value="No" /> No
-              </label>
+            <label>
+              <input type="radio" name="instrumentoPropio" value="Si" />
+              &nbsp;&nbsp; Sí
+            </label>
+            <label>
+              <input type="radio" name="instrumentoPropio" value="No" />
+              &nbsp;&nbsp;&nbsp; No
+            </label>
+            <label>¿Cuál?:</label>
+            <input type="text" name="detalleInstrumento" />
+          </div>
+          <div class="radio-buttons">
+            <label style="color: black; text-align: justify; margin-right: 30px"
+              ><br /><br />
+              Autorizo a la Fundación Orquesta Sinfónica de Carabobo a hacer uso
+              del material fotográfico y audiovisual de las actividades
+              académicas y artísticas que se lleven a cabo durante el desarrollo
+              del Programa de Formación Musical. Las imágenes podrán ser usadas
+              para la difusión en medios de comunicación y redes sociales.
+            </label>
+            <label style="transform: scale(1.2)">
+              <input type="radio" name="instrumentoPropio" value="Si" /> Sí
+            </label>
+            <label style="transform: scale(1.2)">
+              <input type="radio" name="instrumentoPropio" value="No" /> No
+            </label>
+          </div>
+          <br>
+          <div class="row">
+            <div>
+              <label>Fecha de ingreso:</label>
               <input
+                class="readonly"
+                readonly
                 type="text"
-                name="detalleInstrumento"
-                placeholder="¿Cuál?"
+                name="fechaIngreso"
+                placeholder="Se llena por el personal"
               />
+            </div>
+            <div style="position: relative;"><label style="position: absolute; top:40%; left:30%;" for="Mensualidad">Mensualidad:</label></div>
+            <div>
+              
+              <label>1 Materia:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>2 Materias:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>___ Materias:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div style="text-align: right;">
+              <label>Firma del Estudiante o Representante Legal: _________________________</label><br><br>
+              <label>Cédula: _________________________</label>
             </div>
           </div>
         </div>
@@ -226,6 +299,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="foto.js"></script>
     <script>
       function generarPDF() {
         const element = document.querySelector(".container2");
@@ -245,9 +319,9 @@
         button.style.display = "none";
 
         const options = {
-          margin: 1,
-          filename: "Ficho_Registro_Estudiante.pdf",
-          html2canvas: { scale: 1 },
+          margin: 0,
+          filename: 'Programa de Formación Musical Maestro José Calabrese (Inscripción).pdf',
+          html2canvas: { scale: 3 },
           jsPDF: {
             unit: "px",
             format: [element.offsetWidth, element.offsetHeight],

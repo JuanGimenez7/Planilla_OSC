@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Renovación de Inscripción</title>
+    <title>
+      Programa de Formación Musical "Maestro José Calabrese" (Renovación de
+      Inscripción)
+    </title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="ico" href="imagenes/calabrese_logo.ico" />
   </head>
   <body id="renovacion">
-    <div class="container2">
+    <div class="container3">
       <!-- Cabecera -->
 
       <header class="header">
@@ -117,29 +121,58 @@
                 type="text"
                 id="cualBeca"
                 name="cualBeca"
-                placeholder="Describa la beca"
+                placeholder="Se llena por el personal"
+                readonly
+                class="readonly"
               />
             </div>
           </div>
 
-          <label for="instrumentos">Instrumento(s):</label>
-          <input type="text" id="instrumentos" name="instrumentos" />
-
-          <label for="docenteInstrumentos">Docente(s) de instrumento(s):</label>
-          <input
-            type="text"
-            id="docenteInstrumentos"
-            name="docenteInstrumentos"
-          />
-
-          <label for="materiasTeoricas">Materias Teóricas:</label>
-          <input type="text" id="materiasTeoricas" name="materiasTeoricas" />
-
-          <label for="docenteTeoricas">Docente(s) de materias teóricas:</label>
-          <input type="text" id="docenteTeoricas" name="docenteTeoricas" />
+          <div class="row">
+            <div>
+              <label for="instrumentos">Instrumento(s):</label>
+              <input type="text" id="instrumentos" name="instrumentos" />
+            </div>
+            <div>
+              <label for="docenteInstrumentos"
+                >Docente(s) de instrumento(s):</label
+              >
+              <input
+                type="text"
+                id="docenteInstrumentos"
+                name="docenteInstrumentos"
+                placeholder="Se llena por el personal"
+                readonly
+                class="readonly"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="materiasTeoricas">Materias Teóricas:</label>
+              <input
+                type="text"
+                id="materiasTeoricas"
+                name="materiasTeoricas"
+              />
+            </div>
+            <div>
+              <label for="docenteTeoricas"
+                >Docente(s) de materias teóricas:</label
+              >
+              <input
+                type="text"
+                id="docenteTeoricas"
+                name="docenteTeoricas"
+                placeholder="Se llena por el personal"
+                readonly
+                class="readonly"
+              />
+            </div>
+          </div>
 
           <label for="otros">Otros:</label>
-          <textarea id="otros" name="otros"></textarea>
+          <input type="text" id="otros" name="otros" />
 
           <div class="row">
             <div>
@@ -152,11 +185,52 @@
             </div>
             <div>
               <label for="cualBeca">¿Cuál?:</label>
+              <input type="text" id="cualInstrumento" name="cualInstrumento" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label>Inscripción:</label>
               <input
+                class="readonly"
+                readonly
                 type="text"
-                id="cualInstrumento"
-                name="cualInstrumento"
-                placeholder="¿Cuál instrumento posee?"
+                name="fechaIngreso"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div style="position: relative">
+              <label
+                style="position: absolute; top: 40%; left: 22%"
+                for="Mensualidad"
+                >Mensualidad:</label
+              >
+            </div>
+            <div>
+              <label>1 Materia:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>2 Materias:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                placeholder="Se llena por el personal"
+              />
+            </div>
+            <div>
+              <label>___ Materias:</label>
+              <input
+                class="readonly"
+                readonly
+                type="text"
+                placeholder="Se llena por el personal"
               />
             </div>
           </div>
@@ -169,9 +243,10 @@
       </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="foto.js"></script>
     <script>
       function generarPDF() {
-        const element = document.querySelector(".container2");
+        const element = document.querySelector(".container3");
         const button = document.querySelector("#botonGenerarPDF");
 
         // Asegúrate de que los valores actuales de los inputs y textareas estén reflejados en el PDF
@@ -189,9 +264,10 @@
         button.style.display = "none";
 
         const options = {
-          margin: 1,
-          filename: "Ficha_Registro_Estudiante.pdf",
-          html2canvas: { scale: 1 },
+          margin: 0,
+          filename:
+            "Programa de Formación Musical Maestro José Calabrese (Renovación de Inscripción).pdf",
+          html2canvas: { scale: 3 },
           jsPDF: {
             unit: "px",
             format: [element.offsetWidth, element.offsetHeight],
